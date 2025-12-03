@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mustafa Khalied | Mobile App Specialist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        primary: '#0F172A', 
+                        accent: '#38BDF8',  
+                        secondary: '#1E293B' 
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .modal-overlay {
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+        }
+    </style>
+</head>
+<body class="bg-primary text-gray-200 font-sans antialiased selection:bg-accent selection:text-white relative">
+
+    <nav class="fixed w-full z-40 bg-primary/90 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0 font-bold text-xl text-white">MK<span class="text-accent">.</span></div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#about" class="hover:text-accent px-3 py-2 rounded-md text-sm font-medium transition">About</a>
+                        <a href="#skills" class="hover:text-accent px-3 py-2 rounded-md text-sm font-medium transition">Skills</a>
+                        <a href="#projects" class="hover:text-accent px-3 py-2 rounded-md text-sm font-medium transition">Projects</a>
+                        <a href="#contact" class="bg-accent text-primary px-4 py-2 rounded-md text-sm font-bold hover:bg-white transition">Contact Me</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="about" class="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
+        <div class="absolute top-20 left-10 w-72 h-72 bg-accent/20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h2 class="text-accent font-semibold tracking-wide uppercase text-sm mb-4">Mobile Application Specialist</h2>
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">Mustafa Khalied</h1>
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-400">
+                Flutter & Android Native Developer with 4+ years of experience building scalable, user-centric mobile solutions.
+            </p>
+            
+            <div class="mt-8 flex flex-col md:flex-row justify-center items-center gap-4">
+                <a href="#projects" class="w-full md:w-auto text-center bg-accent text-primary border border-accent hover:bg-white px-8 py-3 rounded-full font-semibold transition duration-300">
+                    View Projects
+                </a>
+                <a href="https://drive.google.com/open?id=15h5lX1Mvwb8uX8l893n9a9P-NkvVWqi6&usp=drive_fs" target="_blank" class="w-full md:w-auto text-center flex items-center justify-center gap-2 border border-gray-500 text-gray-300 hover:border-accent hover:text-accent px-8 py-3 rounded-full font-semibold transition duration-300">
+                    <i class="fa-solid fa-file-arrow-down"></i> Download CV
+                </a>
+                <a href="#contact" class="w-full md:w-auto text-center border border-gray-600 text-gray-300 hover:border-white hover:text-white px-8 py-3 rounded-full font-semibold transition duration-300">
+                    Contact Me
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-20 bg-secondary/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-white mb-12 text-center">Technical <span class="text-accent">Arsenal</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <div class="glass-card p-6 rounded-2xl hover:bg-secondary group transition">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="text-accent text-3xl"><i class="fa-solid fa-mobile-screen"></i></div>
+                        <h3 class="text-xl font-bold text-white">Mobile Ecosystem</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">Flutter</span>
+                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">Dart</span>
+                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">Android Native</span>
+                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">Kotlin</span>
+                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">Jetpack Compose</span>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl hover:bg-secondary group transition">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="text-accent text-3xl"><i class="fa-solid fa-sitemap"></i></div>
+                        <h3 class="text-xl font-bold text-white">State & Architecture</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">GetX</span>
+                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">Cubit / Bloc</span>
+                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">Riverpod</span>
+                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">Clean Architecture</span>
+                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">MVC / MVP / MVI</span>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl hover:bg-secondary group transition">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="text-accent text-3xl"><i class="fa-solid fa-cloud"></i></div>
+                        <h3 class="text-xl font-bold text-white">Backend & Net</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">Firebase (Auth, Firestore, Storage)</span>
+                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">REST API</span>
+                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">GraphQL</span>
+                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">Dio & Retrofit</span>
+                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">JSON & NoSQL</span>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl hover:bg-secondary group transition">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="text-accent text-3xl"><i class="fa-solid fa-bolt"></i></div>
+                        <h3 class="text-xl font-bold text-white">Real-time</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">WebRTC</span>
+                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">Socket.IO</span>
+                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">WebSockets</span>
+                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">FCM (Cloud Messaging)</span>
+                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">Realtime Database</span>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl hover:bg-secondary group transition">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="text-accent text-3xl"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                        <h3 class="text-xl font-bold text-white">Tools & DevOps</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">Git & GitHub</span>
+                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">Figma (UI/UX)</span>
+                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">Google Play Console</span>
+                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">App Store Connect</span>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl hover:bg-secondary group transition">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="text-accent text-3xl"><i class="fa-solid fa-puzzle-piece"></i></div>
+                        <h3 class="text-xl font-bold text-white">Integrations</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">Google Maps SDK</span>
+                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">Zoom SDK</span>
+                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">Just Audio</span>
+                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">Audio Service</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-white mb-12 text-center">Featured <span class="text-accent">Projects</span></h2>
+            <p class="text-center text-gray-400 mb-8 text-sm">Click on any card to view full details.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-container">
+                </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-20 bg-secondary/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-white mb-12">Experience</h2>
+            <div class="relative border-l border-gray-700 ml-4 space-y-12">
+                <div class="mb-8 ml-8 relative">
+                    <span class="absolute -left-12 top-1 bg-accent w-4 h-4 rounded-full border-4 border-primary"></span>
+                    <h3 class="text-xl font-bold text-white">Flutter Developer <span class="text-sm text-accent font-normal ml-2">@ Misraj-AI</span></h3>
+                    <span class="text-sm text-gray-500 block mb-2">Feb 2024 - Present (Remote)</span>
+                    <p class="text-gray-400">Boosted user engagement by 30%. Integrated REST APIs, GraphQL, and AI-driven features.</p>
+                </div>
+                <div class="mb-8 ml-8 relative">
+                    <span class="absolute -left-12 top-1 bg-gray-600 w-4 h-4 rounded-full border-4 border-primary"></span>
+                    <h3 class="text-xl font-bold text-white">Flutter Developer <span class="text-sm text-accent font-normal ml-2">@ Future Code</span></h3>
+                    <span class="text-sm text-gray-500 block mb-2">Nov 2023 - Feb 2024</span>
+                    <p class="text-gray-400">Targeted both Android and iOS. Utilized Google Maps, Dio, Retrofit, and MVC pattern.</p>
+                </div>
+                <div class="mb-8 ml-8 relative">
+                    <span class="absolute -left-12 top-1 bg-gray-600 w-4 h-4 rounded-full border-4 border-primary"></span>
+                    <h3 class="text-xl font-bold text-white">Flutter Developer <span class="text-sm text-accent font-normal ml-2">@ Al-Sadeem</span></h3>
+                    <span class="text-sm text-gray-500 block mb-2">Mar 2022 - Feb 2024 (Remote)</span>
+                    <p class="text-gray-400">Developed apps using Sockets, WebRTC, and Zoom SDK. Gained experience in Android Native.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-black py-16 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-white mb-6">Let's Connect</h2>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-12">
+                <a href="mailto:mustafa.khalied.98@gmail.com" class="flex items-center gap-2 px-6 py-3 bg-secondary rounded-lg text-white hover:text-accent transition">
+                    <i class="fa-solid fa-envelope"></i> mustafa.khalied.98@gmail.com
+                </a>
+                <a href="tel:+963969154337" class="flex items-center gap-2 px-6 py-3 bg-secondary rounded-lg text-white hover:text-accent transition">
+                    <i class="fa-solid fa-phone"></i> +963 969 154 337
+                </a>
+                <a href="https://wa.me/963969154337" target="_blank" class="flex items-center gap-2 px-6 py-3 bg-green-600 rounded-lg text-white hover:bg-green-700 transition font-bold">
+                    <i class="fa-brands fa-whatsapp text-xl"></i> Chat on WhatsApp
+                </a>
+            </div>
+            <div class="flex justify-center gap-8 mb-8">
+                <a href="https://github.com/mustafa-kh-98" target="_blank" class="text-gray-400 hover:text-white text-4xl transition transform hover:scale-110"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/mustafa-khalied-951935155" target="_blank" class="text-gray-400 hover:text-white text-4xl transition transform hover:scale-110"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            <div class="text-gray-600 text-sm">&copy; 2025 Mustafa Khalied. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <div id="projectModal" class="modal-overlay hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div class="bg-secondary border border-gray-700 w-full max-w-2xl rounded-2xl shadow-2xl relative flex flex-col max-h-[90vh]">
+            <div class="p-6 border-b border-gray-700 flex justify-between items-center">
+                <h3 id="modalTitle" class="text-2xl font-bold text-white">Project Title</h3>
+                <button onclick="closeModal()" class="text-gray-400 hover:text-white text-xl"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="p-6 overflow-y-auto">
+                <p id="modalDesc" class="text-gray-300 leading-relaxed mb-6">Description goes here...</p>
+                <div id="modalTags" class="flex flex-wrap gap-2 mb-6">
+                    </div>
+                
+                <div id="modalButtons" class="flex flex-col sm:flex-row gap-3">
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Data derived from the CV with Updated Links
+        const projectsData = [
+            {
+                id: 0,
+                title: "Being Muslim",
+                icon: "fa-mosque",
+                color: "from-emerald-600 to-teal-900",
+                shortDesc: "Social media app for Muslims. Share thoughts, prayers & events.",
+                fullDesc: "Led the implementation of a cross-platform mobile application utilizing Flutter, Bloc for state management, and both REST API and GraphQL integration. Developed a social media app for Muslims to share thoughts, prayers, articles, and events in a safe environment. Enabled users to request prayers, organize/follow events, and ask Islamic questions with answers from scholars.",
+                tags: ["Flutter", "Bloc", "GraphQL", "REST API"],
+                links: [
+                    { label: "Google Play", url: "https://play.google.com/store/apps/details?id=com.misraj.being.muslim", icon: "fa-google-play" }
+                ]
+            },
+            {
+                id: 1,
+                title: "Fatiha",
+                icon: "fa-book-quran",
+                color: "from-indigo-600 to-purple-900",
+                shortDesc: "Learning Surah Al-Fatiha with AI-powered Telawa correction.",
+                fullDesc: "Led the implementation of a cross-platform mobile application utilizing Flutter, GetX for state management, and REST API. Developed a mobile app for learning Surah Al-Fatiha with recitations, Tajweed lessons, interpretations, and memorization tools. Integrated AI-powered Telawa correction for personalized feedback.",
+                tags: ["Flutter", "GetX", "AI Integration", "Education"],
+                links: [
+                    { label: "Google Play", url: "https://play.google.com/store/apps/details?id=com.misraj.fatihah", icon: "fa-google-play" },
+                    { label: "App Store", url: "https://apps.apple.com/ae/app/alfatiha-al-haramain/id6479575337", icon: "fa-app-store-ios" }
+                ]
+            },
+            {
+                id: 2,
+                title: "Quran-ORB",
+                icon: "fa-tv",
+                color: "from-blue-600 to-indigo-900",
+                shortDesc: "Cross-platform Mobile & Smart TV app for Quran listening.",
+                fullDesc: "Led the implementation of a cross-platform mobile and Smart TV application utilizing Flutter, GetX for state management, and REST API. Developed a Quran-focused app providing customizable listening experiences with multiple recitations and personalized recommendations. Implemented Firebase for notifications, Just Audio & Audio Service for seamless playback, and Dio for networking.",
+                tags: ["Flutter", "Smart TV", "Audio Service", "GetX"],
+                links: [
+                    { label: "Google Play", url: "https://play.google.com/store/apps/details?id=com.misraj.quran.orb", icon: "fa-google-play" },
+                    { label: "App Store", url: "https://apps.apple.com/ae/app/quran-orb/id6480454074", icon: "fa-app-store-ios" }
+                ]
+            },
+            {
+                id: 4,
+                title: "Sadeem (Admin & Student)",
+                icon: "fa-school",
+                color: "from-cyan-600 to-blue-900",
+                shortDesc: "Educational platform connecting students, teachers, and drivers.",
+                fullDesc: "Led the development of an educational platform using Flutter, GetX, and REST API to connect students, teachers, and bus drivers through dedicated apps. Implemented real-time messaging using Sockets and online meetings with Zoom SDK.",
+                tags: ["Zoom SDK", "Sockets", "Education", "GetX"],
+                links: [
+                    { label: "Sadeem App", url: "https://play.google.com/store/apps/details?id=com.sadeem.lightv1", icon: "fa-google-play" },
+                    { label: "Sadeem Teacher", url: "https://play.google.com/store/apps/details?id=com.sadeem.lightv2.teacher", icon: "fa-google-play" }
+                ]
+            },
+            {
+                id: 3,
+                title: "Engz (User & Driver)",
+                icon: "fa-taxi",
+                color: "from-orange-600 to-red-900",
+                shortDesc: "Uber-like app for taxi booking and food delivery services.",
+                fullDesc: "Led the development of an Uber-like mobile application using Flutter, GetX, and REST API for taxi booking and food delivery services. Implemented real-time communication using WebRTC for voice calls and chat (text, images, voice notes, location). Integrated APIs, Sockets, and Google Maps for navigation and data handling.",
+                tags: ["WebRTC", "Google Maps", "Sockets", "GetX"],
+                links: [] 
+            },
+            {
+                id: 5,
+                title: "MyBill",
+                icon: "fa-receipt",
+                color: "from-green-500 to-emerald-800",
+                shortDesc: "Cashback app to earn points from receipts and redeem them.",
+                fullDesc: "Led the implementation of a cross-platform mobile application utilizing Flutter, GetX for state management, Firebase, and REST API integration. Developed a cashback app allowing users to earn points from receipts and redeem them for cash or gift cards. Features QR code scanning, Google Maps, Dio, and MVC architecture.",
+                tags: ["QR Code", "Cashback", "Firebase", "Google Maps"],
+                links: []
+            },
+            {
+                id: 6,
+                title: "Gumla",
+                icon: "fa-boxes-stacked",
+                color: "from-yellow-600 to-orange-800",
+                shortDesc: "Wholesale trading app connecting merchants and small businesses.",
+                fullDesc: "Led the development of a wholesale trading mobile application using Flutter, Provider for state management, and REST API integration. Developed a wholesale trading app facilitating bulk purchases between merchants and small businesses. Implemented Firebase for real-time updates and notifications.",
+                tags: ["Provider", "B2B", "E-commerce", "REST API"],
+                links: []
+            },
+            {
+                id: 7,
+                title: "E-learning",
+                icon: "fa-chalkboard-user",
+                color: "from-pink-600 to-rose-900",
+                shortDesc: "Educational app UI catering to all age groups.",
+                fullDesc: "Led the development of an educational mobile application using Flutter and GetX, focusing on an intuitive and versatile UI. Developed an educational app UI catering to all age groups and educational levels. Designed live streaming interfaces for classes and lectures.",
+                tags: ["UI/UX", "Live Streaming", "GetX", "Flutter"],
+                links: []
+            }
+        ];
+
+        // Function to render cards
+        function renderProjects() {
+            const container = document.getElementById('projects-container');
+            container.innerHTML = projectsData.map(project => `
+                <div onclick="openModal(${project.id})" class="glass-card rounded-xl overflow-hidden group hover:-translate-y-2 cursor-pointer h-full flex flex-col">
+                    <div class="h-40 bg-gradient-to-br ${project.color} flex items-center justify-center relative">
+                        <i class="fa-solid ${project.icon} text-5xl text-white/50 group-hover:text-white transition"></i>
+                        <span class="absolute bottom-2 right-2 text-xs text-white/70 bg-black/20 px-2 py-1 rounded"><i class="fa-solid fa-hand-pointer"></i> Click for details</span>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-white mb-2">${project.title}</h3>
+                            <p class="text-gray-400 text-sm mb-4 line-clamp-2">${project.shortDesc}</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            ${project.tags.slice(0, 3).map(tag => `<span class="text-accent">#${tag}</span>`).join('')}
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Modal Functions
+        function openModal(id) {
+            const project = projectsData.find(p => p.id === id);
+            if (!project) return;
+
+            document.getElementById('modalTitle').innerText = project.title;
+            document.getElementById('modalDesc').innerText = project.fullDesc;
+            
+            // Render Tags
+            const tagsContainer = document.getElementById('modalTags');
+            tagsContainer.innerHTML = project.tags.map(tag => 
+                `<span class="bg-gray-700 text-gray-200 px-3 py-1 rounded-full text-xs border border-gray-600">${tag}</span>`
+            ).join('');
+
+            // Render Links dynamically
+            const buttonsContainer = document.getElementById('modalButtons');
+            buttonsContainer.innerHTML = ''; // Clear previous buttons
+
+            if (project.links && project.links.length > 0) {
+                project.links.forEach(link => {
+                    const btn = document.createElement('a');
+                    btn.href = link.url;
+                    btn.target = "_blank";
+                    btn.className = "inline-flex items-center justify-center gap-2 bg-accent text-primary px-6 py-3 rounded-lg font-bold hover:bg-white transition";
+                    btn.innerHTML = `<i class="fa-brands ${link.icon}"></i> ${link.label}`;
+                    buttonsContainer.appendChild(btn);
+                });
+            } else {
+                const span = document.createElement('span');
+                span.className = "text-gray-500 italic text-sm";
+                span.innerText = "Internal/Private Project";
+                buttonsContainer.appendChild(span);
+            }
+
+            // Show Modal
+            document.getElementById('projectModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeModal() {
+            document.getElementById('projectModal').classList.add('hidden');
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('projectModal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+
+        // Initialize
+        renderProjects();
+    </script>
+</body>
+</html>
