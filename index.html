@@ -1,421 +1,928 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mustafa Khalied | Mobile App Specialist</title>
+
+    <title>Mustafa Khalied — Mobile App Developer for iOS &amp; Android</title>
+    <meta name="description"
+        content="Mustafa Khalied builds high-performance iOS &amp; Android apps with Flutter and native code. 4+ years, 8+ shipped products. Hire a mobile specialist to start your app.">
+    <meta name="keywords"
+        content="Mobile App Developer, Flutter Developer, iOS Developer, Android Developer, Hire Flutter, Mustafa Khalied, App Development Freelance">
+    <meta name="author" content="Mustafa Khalied">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0a0a0c">
+    <link rel="canonical" href="https://mustafa-khalied.dev/">
+    <link rel="icon" type="image/svg+xml" href="logo_light.svg">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mustafa Khalied — Mobile App Developer">
+    <meta property="og:description" content="High-performance iOS & Android apps with Flutter and native code.">
+    <meta property="og:image" content="logo_dark.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mustafa Khalied — Mobile App Developer">
+    <meta name="twitter:description" content="High-performance iOS & Android apps. 4+ years, 8+ shipped products.">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mustafa Khalied",
+      "jobTitle": "Mobile Application Developer",
+      "description": "Flutter & Android Native developer with 4+ years of experience building scalable mobile apps.",
+      "email": "mailto:mustafa.khalied.98@gmail.com",
+      "url": "https://mustafa-khalied.dev/",
+      "sameAs": [
+        "https://github.com/mustafa-kh-98",
+        "https://www.linkedin.com/in/mustafa-khalied-951935155"
+      ],
+      "knowsAbout": ["Flutter","Dart","Android","Kotlin","iOS","Mobile Development"]
+    }
+    </script>
+
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (t === 'light') document.documentElement.classList.remove('dark');
+                else document.documentElement.classList.add('dark');
+            } catch (e) { document.documentElement.classList.add('dark'); }
+        })();
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
+
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'] },
-                    colors: {
-                        primary: '#0F172A', 
-                        accent: '#38BDF8',  
-                        secondary: '#1E293B' 
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        display: ['"Space Grotesk"', 'Inter', 'sans-serif']
                     }
                 }
             }
         }
     </script>
+
     <style>
-        .glass-card {
-            background: rgba(30, 41, 59, 0.7);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
+        :root {
+            --bg: #ffffff;
+            --bg-2: #f4f4f6;
+            --ink: #0a0a0c;
+            --ink-soft: #5b5b66;
+            --line: rgba(10, 10, 12, .10);
+            --surface: rgba(255, 255, 255, .65);
+            --surface-2: #ffffff;
+            --nav: rgba(255, 255, 255, .6);
+            --shadow: 0 24px 60px -24px rgba(10, 10, 14, .22);
+            --g1: #7C5CFF;
+            --g2: #2BD2FF;
+            --mesh: radial-gradient(45rem 32rem at 78% 8%, rgba(124, 92, 255, .16), transparent 60%),
+                radial-gradient(40rem 30rem at 8% 92%, rgba(43, 210, 255, .14), transparent 60%);
         }
-        .modal-overlay {
-            background-color: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(5px);
+
+        html.dark {
+            --bg: #08080a;
+            --bg-2: #0e0e12;
+            --ink: #f3f3f5;
+            --ink-soft: #9a9aa6;
+            --line: rgba(255, 255, 255, .10);
+            --surface: rgba(255, 255, 255, .045);
+            --surface-2: #131318;
+            --nav: rgba(12, 12, 16, .55);
+            --shadow: 0 30px 70px -30px rgba(0, 0, 0, .8);
+            --mesh: radial-gradient(45rem 32rem at 78% 6%, rgba(124, 92, 255, .22), transparent 60%),
+                radial-gradient(42rem 32rem at 6% 94%, rgba(43, 210, 255, .16), transparent 60%);
+        }
+
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 7rem;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--ink);
+            transition: background .5s ease, color .5s ease;
+            overflow-x: hidden;
+        }
+
+        ::selection {
+            background: var(--g1);
+            color: #fff;
+        }
+
+        .font-display {
+            font-family: "Space Grotesk", Inter, sans-serif;
+        }
+
+        .ink-soft {
+            color: var(--ink-soft);
+        }
+
+        .bg2 {
+            background: var(--bg-2);
+        }
+
+        .hairline {
+            border-color: var(--line);
+        }
+
+        .mesh::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: var(--mesh);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .grain::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+            opacity: .035;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E");
+        }
+
+        .grad-text {
+            background: linear-gradient(110deg, var(--g1), var(--g2));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .nav-pill {
+            background: var(--nav);
+            backdrop-filter: saturate(180%) blur(22px);
+            -webkit-backdrop-filter: saturate(180%) blur(22px);
+            border: 1px solid var(--line);
+            box-shadow: 0 1px 0 rgba(255, 255, 255, .04) inset;
+            transition: transform .45s cubic-bezier(.16, 1, .3, 1), box-shadow .4s ease;
+        }
+
+        .nav-pill.scrolled {
+            box-shadow: var(--shadow);
+            transform: translateY(-2px) scale(.99);
+        }
+
+        .nlink {
+            color: var(--ink-soft);
+            font-size: .9rem;
+            font-weight: 500;
+            transition: color .25s;
+        }
+
+        .nlink:hover {
+            color: var(--ink);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: .55rem;
+            border-radius: 999px;
+            font-weight: 600;
+            letter-spacing: -.01em;
+            transition: transform .35s cubic-bezier(.16, 1, .3, 1), box-shadow .35s, opacity .3s, border-color .3s, color .3s;
+        }
+
+        .btn-grad {
+            color: #fff;
+            padding: .9rem 1.7rem;
+            background: linear-gradient(110deg, var(--g1), var(--g2));
+            background-size: 160% 160%;
+            box-shadow: 0 14px 34px -12px rgba(124, 92, 255, .65);
+        }
+
+        .btn-grad:hover {
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 20px 44px -12px rgba(124, 92, 255, .7);
+        }
+
+        .btn-line {
+            padding: .9rem 1.7rem;
+            border: 1px solid var(--line);
+            color: var(--ink);
+            background: var(--surface);
+            backdrop-filter: blur(8px);
+        }
+
+        .btn-line:hover {
+            transform: translateY(-2px) scale(1.03);
+            border-color: color-mix(in srgb, var(--g1) 55%, transparent);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(34px);
+            transition: opacity 1s cubic-bezier(.16, 1, .3, 1), transform 1s cubic-bezier(.16, 1, .3, 1);
+        }
+
+        .reveal.in {
+            opacity: 1;
+            transform: none;
+        }
+
+        .tile {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 1.75rem;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            transition: transform .55s cubic-bezier(.16, 1, .3, 1), border-color .35s, box-shadow .45s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tile:hover {
+            transform: translateY(-6px);
+            border-color: color-mix(in srgb, var(--g1) 45%, transparent);
+            box-shadow: var(--shadow);
+        }
+
+        .tile-glow {
+            position: absolute;
+            inset: auto -40% -60% auto;
+            width: 70%;
+            height: 70%;
+            background: radial-gradient(circle, rgba(124, 92, 255, .25), transparent 70%);
+            opacity: 0;
+            transition: opacity .5s;
+        }
+
+        .tile:hover .tile-glow {
+            opacity: 1;
+        }
+
+        .chip {
+            font-size: .74rem;
+            padding: .34rem .74rem;
+            border-radius: 999px;
+            border: 1px solid var(--line);
+            color: var(--ink-soft);
+            font-weight: 500;
+        }
+
+        .marquee {
+            display: flex;
+            gap: 3.5rem;
+            width: max-content;
+            animation: scroll 32s linear infinite;
+        }
+
+        .marquee:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        .show-row {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .show-visual {
+            border-radius: 1.75rem;
+            overflow: hidden;
+            position: relative;
+            transition: transform .6s cubic-bezier(.16, 1, .3, 1), box-shadow .5s;
+        }
+
+        .show-row:hover .show-visual {
+            transform: scale(1.015);
+            box-shadow: var(--shadow);
+        }
+
+        .show-visual i {
+            transition: transform .6s cubic-bezier(.16, 1, .3, 1);
+        }
+
+        .show-row:hover .show-visual i {
+            transform: scale(1.12) rotate(-4deg);
+        }
+
+        .svc {
+            border-top: 1px solid var(--line);
+            transition: padding-left .4s cubic-bezier(.16, 1, .3, 1);
+            position: relative;
+        }
+
+        .svc::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 0;
+            background: linear-gradient(180deg, var(--g1), var(--g2));
+            opacity: .08;
+            transition: width .45s cubic-bezier(.16, 1, .3, 1);
+        }
+
+        .svc:hover::before {
+            width: 100%;
+        }
+
+        .svc:hover {
+            padding-left: 1.5rem;
+        }
+
+        .svc .arrow {
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: opacity .35s, transform .35s;
+        }
+
+        .svc:hover .arrow {
+            opacity: 1;
+            transform: none;
+        }
+
+        .modal-ov {
+            background: rgba(0, 0, 0, .6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .modal-card {
+            background: var(--surface-2);
+            border: 1px solid var(--line);
+        }
+
+        #loader {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            display: grid;
+            place-items: center;
+            background: var(--bg);
+            transition: opacity .6s, visibility .6s;
+        }
+
+        #loader.done {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-mark {
+            width: 120px;
+            height: auto;
+            animation: bob 1.5s ease-in-out infinite;
+        }
+
+        @keyframes bob {
+
+            0%,
+            100% {
+                opacity: .4;
+                transform: translateY(3px) scale(.96);
+            }
+
+            50% {
+                opacity: 1;
+                transform: translateY(-3px) scale(1);
+            }
+        }
+
+        .side-rail {
+            writing-mode: vertical-rl;
+            letter-spacing: .25em;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+
+            .marquee {
+                animation: none;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: .001ms !important;
+                transition-duration: .001ms !important;
+            }
         }
     </style>
 </head>
-<body class="bg-primary text-gray-200 font-sans antialiased selection:bg-accent selection:text-white relative">
 
-    <nav class="fixed w-full z-40 bg-primary/90 backdrop-blur-md border-b border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex-shrink-0 font-bold text-xl text-white">MK<span class="text-accent">.</span></div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="#about" class="hover:text-accent px-3 py-2 rounded-md text-sm font-medium transition">About</a>
-                        <a href="#skills" class="hover:text-accent px-3 py-2 rounded-md text-sm font-medium transition">Skills</a>
-                        <a href="#projects" class="hover:text-accent px-3 py-2 rounded-md text-sm font-medium transition">Projects</a>
-                        <a href="#contact" class="bg-accent text-primary px-4 py-2 rounded-md text-sm font-bold hover:bg-white transition">Contact Me</a>
+<body class="font-sans antialiased grain">
+
+    <div id="loader" aria-hidden="true">
+        <img src="logo_light.svg" class="loader-mark dark:hidden" alt="Mustafa Khalied" />
+        <img src="logo_dark.svg" class="loader-mark hidden dark:block" alt="Mustafa Khalied" />
+    </div>
+
+    <!-- Floating glass navbar -->
+    <div class="fixed inset-x-0 top-4 sm:top-5 z-40 px-4">
+        <nav id="nav" class="nav-pill max-w-5xl mx-auto rounded-full px-4 sm:px-6">
+            <div class="flex items-center justify-between h-14">
+                <a href="#home" class="flex items-center gap-2.5" aria-label="Home">
+                    <img src="logo_light.svg" class="h-8 w-auto dark:hidden" alt="Mustafa Khalied logo" />
+                    <img src="logo_dark.svg" class="h-8 w-auto hidden dark:block" alt="Mustafa Khalied logo" />
+                    <span class="font-display font-600 tracking-tight text-[15px]">Mustafa K.</span>
+                </a>
+
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#about" class="nlink">About</a>
+                    <a href="#skills" class="nlink">Skills</a>
+                    <a href="#work" class="nlink">Work</a>
+                    <a href="#services" class="nlink">Services</a>
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <button id="theme" aria-label="Toggle theme"
+                        class="w-9 h-9 rounded-full grid place-items-center ink-soft hover:text-[var(--ink)] transition">
+                        <i class="fa-solid fa-moon dark:hidden text-sm"></i>
+                        <i class="fa-solid fa-sun hidden dark:block text-sm"></i>
+                    </button>
+                    <a href="#contact" class="btn btn-grad !px-5 !py-2 text-sm hidden sm:inline-flex">Hire Me</a>
+                    <button id="burger" aria-label="Menu"
+                        class="md:hidden w-9 h-9 rounded-full grid place-items-center ink-soft">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <div id="mobileMenu"
+            class="md:hidden hidden nav-pill max-w-5xl mx-auto mt-2 rounded-3xl px-6 py-5 flex-col gap-4">
+            <a href="#about" class="nlink mobile-link">About</a>
+            <a href="#skills" class="nlink mobile-link">Skills</a>
+            <a href="#work" class="nlink mobile-link">Work</a>
+            <a href="#services" class="nlink mobile-link">Services</a>
+            <a href="#contact" class="btn btn-grad text-sm mobile-link">Hire Me</a>
+        </div>
+    </div>
+
+    <!-- Vertical social rail -->
+    <div class="hidden lg:flex flex-col items-center gap-5 fixed left-6 bottom-6 z-30">
+        <a href="https://github.com/mustafa-kh-98" target="_blank" rel="noopener"
+            class="ink-soft hover:text-[var(--ink)] transition text-lg" aria-label="GitHub"><i
+                class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/mustafa-khalied-951935155" target="_blank" rel="noopener"
+            class="ink-soft hover:text-[var(--ink)] transition text-lg" aria-label="LinkedIn"><i
+                class="fa-brands fa-linkedin-in"></i></a>
+        <span class="w-px h-16" style="background:var(--line)"></span>
+        <span class="side-rail text-[11px] ink-soft">SCROLL</span>
+    </div>
+
+    <!-- HERO -->
+    <header id="home" class="relative min-h-screen flex items-center mesh overflow-hidden">
+        <div class="relative z-10 w-full max-w-6xl mx-auto px-5 sm:px-8 pt-32 pb-20">
+            <div class="reveal inline-flex items-center gap-2.5 px-4 py-2 rounded-full text-sm mb-9"
+                style="border:1px solid var(--line); background:var(--surface)">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                Available for new projects
+            </div>
+
+            <h1 class="font-display font-700 tracking-[-0.04em] leading-[0.95]
+                       text-[15vw] sm:text-[12vw] md:text-[8.5rem] lg:text-[10rem]">
+                <span class="reveal block">Mobile apps</span>
+                <span class="reveal block grad-text" style="transition-delay:.1s">that convert.</span>
+            </h1>
+
+            <div class="mt-10 grid lg:grid-cols-[1.4fr_1fr] gap-10 items-end">
+                <p class="reveal text-lg sm:text-xl ink-soft max-w-xl leading-relaxed"
+                    style="transition-delay:.2s">
+                    I'm <span class="text-[var(--ink)] font-600">Mustafa Khalied</span> — a mobile
+                    developer turning ideas into fast, elegant iOS &amp; Android products with
+                    Flutter and native code. <span class="text-[var(--ink)] font-600">4+ years</span>,
+                    <span class="text-[var(--ink)] font-600">8+ apps</span> shipped to the stores.
+                </p>
+                <div class="reveal flex flex-col sm:flex-row lg:flex-col gap-3" style="transition-delay:.28s">
+                    <a href="#contact" class="btn btn-grad">
+                        <i class="fa-solid fa-rocket"></i> Start Your App
+                    </a>
+                    <a href="#work" class="btn btn-line">See selected work</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Tech marquee -->
+    <section class="py-7 border-y hairline bg2 overflow-hidden" aria-hidden="true">
+        <div class="marquee text-2xl sm:text-3xl font-display font-600 ink-soft">
+            <span>Flutter</span><span>·</span><span>Dart</span><span>·</span><span>Android Native</span><span>·</span>
+            <span>Kotlin</span><span>·</span><span>Firebase</span><span>·</span><span>WebRTC</span><span>·</span>
+            <span>GraphQL</span><span>·</span><span>REST API</span><span>·</span><span>Sockets</span><span>·</span>
+            <span>Flutter</span><span>·</span><span>Dart</span><span>·</span><span>Android Native</span><span>·</span>
+            <span>Kotlin</span><span>·</span><span>Firebase</span><span>·</span><span>WebRTC</span><span>·</span>
+            <span>GraphQL</span><span>·</span><span>REST API</span><span>·</span><span>Sockets</span><span>·</span>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-28 sm:py-40 px-5 sm:px-8">
+        <div class="max-w-6xl mx-auto grid lg:grid-cols-12 gap-12">
+            <div class="lg:col-span-3 reveal">
+                <span class="text-sm font-600 tracking-[0.2em] ink-soft uppercase">/ About</span>
+            </div>
+            <div class="lg:col-span-9">
+                <h2 class="reveal font-display font-600 text-3xl sm:text-5xl tracking-[-0.025em] leading-[1.12]">
+                    I help founders and teams ship mobile products that feel
+                    <span class="grad-text">premium</span> — and perform like it.
+                </h2>
+                <p class="reveal ink-soft text-lg leading-relaxed mt-8 max-w-2xl" style="transition-delay:.1s">
+                    From social platforms and education apps to real-time communication and
+                    on-demand services, I've led cross-platform builds end to end — clean
+                    architecture, thoughtful UX, and reliable performance that lifted user
+                    engagement by up to 30%.
+                </p>
+                <div class="reveal grid grid-cols-2 sm:grid-cols-4 gap-6 mt-14" style="transition-delay:.18s">
+                    <div>
+                        <div class="font-display font-700 text-4xl grad-text">4+</div>
+                        <div class="text-sm ink-soft mt-2">Years building</div>
+                    </div>
+                    <div>
+                        <div class="font-display font-700 text-4xl grad-text">8+</div>
+                        <div class="text-sm ink-soft mt-2">Apps shipped</div>
+                    </div>
+                    <div>
+                        <div class="font-display font-700 text-4xl grad-text">30%</div>
+                        <div class="text-sm ink-soft mt-2">Engagement lift</div>
+                    </div>
+                    <div>
+                        <div class="font-display font-700 text-4xl grad-text">2</div>
+                        <div class="text-sm ink-soft mt-2">Platforms, 1 codebase</div>
                     </div>
                 </div>
             </div>
         </div>
-    </nav>
+    </section>
 
-    <section id="about" class="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
-        <div class="absolute top-20 left-10 w-72 h-72 bg-accent/20 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+    <!-- SKILLS — bento -->
+    <section id="skills" class="py-24 sm:py-32 px-5 sm:px-8 bg2 border-y hairline">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-wrap items-end justify-between gap-4 mb-14">
+                <h2 class="reveal font-display font-600 text-3xl sm:text-5xl tracking-[-0.025em]">
+                    A sharp, focused toolkit
+                </h2>
+                <p class="reveal ink-soft max-w-sm" style="transition-delay:.1s">
+                    Battle-tested in production, not just on paper.
+                </p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 auto-rows-[minmax(170px,auto)] gap-4"
+                id="skills-grid"></div>
+        </div>
+    </section>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <h2 class="text-accent font-semibold tracking-wide uppercase text-sm mb-4">Mobile Application Specialist</h2>
-            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">Mustafa Khalied</h1>
-            <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-400">
-                Flutter & Android Native Developer with 4+ years of experience building scalable, user-centric mobile solutions.
+    <!-- WORK — alternating showcase -->
+    <section id="work" class="py-28 sm:py-40 px-5 sm:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-wrap items-end justify-between gap-4 mb-16">
+                <h2 class="reveal font-display font-600 text-3xl sm:text-5xl tracking-[-0.025em]">
+                    Selected work
+                </h2>
+                <p class="reveal ink-soft" style="transition-delay:.1s">Tap any project for the full story.</p>
+            </div>
+            <div class="space-y-20 sm:space-y-28" id="work-list"></div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="py-24 sm:py-32 px-5 sm:px-8 bg2 border-y hairline">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="reveal font-display font-600 text-3xl sm:text-5xl tracking-[-0.025em] mb-4">
+                What I can do for you
+            </h2>
+            <p class="reveal ink-soft text-lg mb-16 max-w-xl" style="transition-delay:.1s">
+                End-to-end mobile delivery — from the first whiteboard sketch to a polished
+                release on the App Store and Google Play.
             </p>
-            
-            <div class="mt-8 flex flex-col md:flex-row justify-center items-center gap-4">
-                <a href="#projects" class="w-full md:w-auto text-center bg-accent text-primary border border-accent hover:bg-white px-8 py-3 rounded-full font-semibold transition duration-300">
-                    View Projects
-                </a>
-               <a href="mustafa-cv-mobile-dev.pdf"
-   target="_blank"
-   class="w-full md:w-auto text-center flex items-center justify-center gap-2 border border-gray-500 text-gray-300 hover:border-accent hover:text-accent px-8 py-3 rounded-full font-semibold transition duration-300">
-    <i class="fa-solid fa-file-arrow-down"></i> View CV
-</a>
-                <a href="#contact" class="w-full md:w-auto text-center border border-gray-600 text-gray-300 hover:border-white hover:text-white px-8 py-3 rounded-full font-semibold transition duration-300">
-                    Contact Me
-                </a>
-            </div>
+            <div id="svc-list"></div>
         </div>
     </section>
 
-    <section id="skills" class="py-20 bg-secondary/30">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-white mb-12 text-center">Technical <span class="text-accent">Arsenal</span></h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                
-                <div class="glass-card p-6 rounded-2xl hover:bg-secondary group transition">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="text-accent text-3xl"><i class="fa-solid fa-mobile-screen"></i></div>
-                        <h3 class="text-xl font-bold text-white">Mobile Ecosystem</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">Flutter</span>
-                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">Dart</span>
-                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">Android Native</span>
-                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">Kotlin</span>
-                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">Jetpack Compose</span>
-                    </div>
+    <!-- PROCESS / TRUST -->
+    <section class="py-24 sm:py-32 px-5 sm:px-8">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="reveal font-display font-600 text-3xl sm:text-5xl tracking-[-0.025em] mb-16">
+                Working with me is <span class="grad-text">simple</span>
+            </h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="reveal tile p-8">
+                    <span class="tile-glow"></span>
+                    <div class="font-display font-700 text-5xl grad-text mb-5">01</div>
+                    <h3 class="text-xl font-600 mb-2">Discovery</h3>
+                    <p class="ink-soft leading-relaxed">We align on goals, scope and timeline.
+                        You get a clear, honest plan — no jargon.</p>
                 </div>
-
-                <div class="glass-card p-6 rounded-2xl hover:bg-secondary group transition">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="text-accent text-3xl"><i class="fa-solid fa-sitemap"></i></div>
-                        <h3 class="text-xl font-bold text-white">State & Architecture</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">GetX</span>
-                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">Cubit / Bloc</span>
-                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">Riverpod</span>
-                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">Clean Architecture</span>
-                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">MVC / MVP / MVI</span>
-                    </div>
+                <div class="reveal tile p-8" style="transition-delay:.08s">
+                    <span class="tile-glow"></span>
+                    <div class="font-display font-700 text-5xl grad-text mb-5">02</div>
+                    <h3 class="text-xl font-600 mb-2">Build</h3>
+                    <p class="ink-soft leading-relaxed">Iterative delivery with regular demos,
+                        clean code and clear communication every step.</p>
                 </div>
-
-                <div class="glass-card p-6 rounded-2xl hover:bg-secondary group transition">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="text-accent text-3xl"><i class="fa-solid fa-cloud"></i></div>
-                        <h3 class="text-xl font-bold text-white">Backend & Net</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">Firebase (Auth, Firestore, Storage)</span>
-                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">REST API</span>
-                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">GraphQL</span>
-                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">Dio & Retrofit</span>
-                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">JSON & NoSQL</span>
-                    </div>
-                </div>
-
-                <div class="glass-card p-6 rounded-2xl hover:bg-secondary group transition">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="text-accent text-3xl"><i class="fa-solid fa-bolt"></i></div>
-                        <h3 class="text-xl font-bold text-white">Real-time</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">WebRTC</span>
-                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">Socket.IO</span>
-                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">WebSockets</span>
-                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">FCM (Cloud Messaging)</span>
-                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">Realtime Database</span>
-                    </div>
-                </div>
-
-                <div class="glass-card p-6 rounded-2xl hover:bg-secondary group transition">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="text-accent text-3xl"><i class="fa-solid fa-screwdriver-wrench"></i></div>
-                        <h3 class="text-xl font-bold text-white">Tools & DevOps</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">Git & GitHub</span>
-                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">Figma (UI/UX)</span>
-                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">Google Play Console</span>
-                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">App Store Connect</span>
-                    </div>
-                </div>
-
-                <div class="glass-card p-6 rounded-2xl hover:bg-secondary group transition">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="text-accent text-3xl"><i class="fa-solid fa-puzzle-piece"></i></div>
-                        <h3 class="text-xl font-bold text-white">Integrations</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">Google Maps SDK</span>
-                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">Zoom SDK</span>
-                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">Just Audio</span>
-                        <span class="bg-primary/80 px-3 py-1 rounded-md text-xs text-gray-300 border border-gray-700">Audio Service</span>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-white mb-12 text-center">Featured <span class="text-accent">Projects</span></h2>
-            <p class="text-center text-gray-400 mb-8 text-sm">Click on any card to view full details.</p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-container">
-                </div>
-        </div>
-    </section>
-
-    <section id="experience" class="py-20 bg-secondary/30">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-white mb-12">Experience</h2>
-            <div class="relative border-l border-gray-700 ml-4 space-y-12">
-                <div class="mb-8 ml-8 relative">
-                    <span class="absolute -left-12 top-1 bg-accent w-4 h-4 rounded-full border-4 border-primary"></span>
-                    <h3 class="text-xl font-bold text-white">Flutter Developer <span class="text-sm text-accent font-normal ml-2">@ Misraj-AI</span></h3>
-                    <span class="text-sm text-gray-500 block mb-2">Feb 2024 - Present (Remote)</span>
-                    <p class="text-gray-400">Boosted user engagement by 30%. Integrated REST APIs, GraphQL, and AI-driven features.</p>
-                </div>
-                <div class="mb-8 ml-8 relative">
-                    <span class="absolute -left-12 top-1 bg-gray-600 w-4 h-4 rounded-full border-4 border-primary"></span>
-                    <h3 class="text-xl font-bold text-white">Flutter Developer <span class="text-sm text-accent font-normal ml-2">@ Future Code</span></h3>
-                    <span class="text-sm text-gray-500 block mb-2">Nov 2023 - Feb 2024</span>
-                    <p class="text-gray-400">Targeted both Android and iOS. Utilized Google Maps, Dio, Retrofit, and MVC pattern.</p>
-                </div>
-                <div class="mb-8 ml-8 relative">
-                    <span class="absolute -left-12 top-1 bg-gray-600 w-4 h-4 rounded-full border-4 border-primary"></span>
-                    <h3 class="text-xl font-bold text-white">Flutter Developer <span class="text-sm text-accent font-normal ml-2">@ Al-Sadeem</span></h3>
-                    <span class="text-sm text-gray-500 block mb-2">Mar 2022 - Feb 2024 (Remote)</span>
-                    <p class="text-gray-400">Developed apps using Sockets, WebRTC, and Zoom SDK. Gained experience in Android Native.</p>
+                <div class="reveal tile p-8" style="transition-delay:.16s">
+                    <span class="tile-glow"></span>
+                    <div class="font-display font-700 text-5xl grad-text mb-5">03</div>
+                    <h3 class="text-xl font-600 mb-2">Launch &amp; care</h3>
+                    <p class="ink-soft leading-relaxed">Store release, monitoring and
+                        post-launch support so your app keeps performing.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer id="contact" class="bg-black py-16 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold text-white mb-6">Let's Connect</h2>
-            <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-12">
-                <a href="mailto:mustafa.khalied.98@gmail.com" class="flex items-center gap-2 px-6 py-3 bg-secondary rounded-lg text-white hover:text-accent transition">
-                    <i class="fa-solid fa-envelope"></i> mustafa.khalied.98@gmail.com
+    <!-- EXPERIENCE -->
+    <section class="py-24 sm:py-32 px-5 sm:px-8 bg2 border-y hairline">
+        <div class="max-w-6xl mx-auto grid lg:grid-cols-12 gap-12">
+            <div class="lg:col-span-3 reveal">
+                <span class="text-sm font-600 tracking-[0.2em] ink-soft uppercase">/ Experience</span>
+            </div>
+            <div class="lg:col-span-9 space-y-10">
+                <div class="reveal flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8 pb-8 border-b hairline">
+                    <span class="text-sm ink-soft sm:w-44 shrink-0">Feb 2024 — Present</span>
+                    <div>
+                        <h3 class="text-xl font-600">Flutter Developer · <span class="grad-text">Misraj-AI</span>
+                        </h3>
+                        <p class="ink-soft mt-1">Boosted user engagement by 30%. Integrated REST,
+                            GraphQL and AI-driven features. Remote.</p>
+                    </div>
+                </div>
+                <div class="reveal flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8 pb-8 border-b hairline"
+                    style="transition-delay:.08s">
+                    <span class="text-sm ink-soft sm:w-44 shrink-0">Nov 2023 — Feb 2024</span>
+                    <div>
+                        <h3 class="text-xl font-600">Flutter Developer · <span class="grad-text">Future Code</span>
+                        </h3>
+                        <p class="ink-soft mt-1">Shipped to Android &amp; iOS. Google Maps, Dio,
+                            Retrofit and the MVC pattern.</p>
+                    </div>
+                </div>
+                <div class="reveal flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8"
+                    style="transition-delay:.16s">
+                    <span class="text-sm ink-soft sm:w-44 shrink-0">Mar 2022 — Feb 2024</span>
+                    <div>
+                        <h3 class="text-xl font-600">Flutter Developer · <span class="grad-text">Al-Sadeem</span>
+                        </h3>
+                        <p class="ink-soft mt-1">Real-time apps with Sockets, WebRTC and Zoom SDK.
+                            Hands-on Android Native. Remote.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <section id="contact" class="py-28 sm:py-44 px-5 sm:px-8 mesh relative overflow-hidden">
+        <div class="relative z-10 max-w-4xl mx-auto text-center">
+            <h2 class="reveal font-display font-700 tracking-[-0.035em] leading-[1.02]
+                       text-5xl sm:text-7xl md:text-[5.5rem]">
+                Let's build <br><span class="grad-text">something great.</span>
+            </h2>
+            <p class="reveal ink-soft text-lg sm:text-xl mt-8 max-w-xl mx-auto" style="transition-delay:.1s">
+                Have an app idea or an existing product to push further? I'm open to
+                freelance and full-time work.
+            </p>
+            <div class="reveal flex flex-col sm:flex-row justify-center gap-4 mt-12" style="transition-delay:.18s">
+                <a href="mailto:mustafa.khalied.98@gmail.com" class="btn btn-grad text-base">
+                    <i class="fa-solid fa-envelope"></i> Hire Me
                 </a>
-                <a href="tel:+963969154337" class="flex items-center gap-2 px-6 py-3 bg-secondary rounded-lg text-white hover:text-accent transition">
+                <a href="https://wa.me/963969154337" target="_blank" rel="noopener" class="btn btn-line text-base">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="tel:+963969154337" class="btn btn-line text-base">
                     <i class="fa-solid fa-phone"></i> +963 969 154 337
                 </a>
-                <a href="https://wa.me/963969154337" target="_blank" class="flex items-center gap-2 px-6 py-3 bg-green-600 rounded-lg text-white hover:bg-green-700 transition font-bold">
-                    <i class="fa-brands fa-whatsapp text-xl"></i> Chat on WhatsApp
-                </a>
             </div>
-            <div class="flex justify-center gap-8 mb-8">
-                <a href="https://github.com/mustafa-kh-98" target="_blank" class="text-gray-400 hover:text-white text-4xl transition transform hover:scale-110"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/mustafa-khalied-951935155" target="_blank" class="text-gray-400 hover:text-white text-4xl transition transform hover:scale-110"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+    </section>
+
+    <footer class="border-t hairline px-5 sm:px-8 py-12">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-2.5">
+                <img src="logo_light.svg" class="h-7 w-auto dark:hidden" alt="Mustafa Khalied logo" />
+                <img src="logo_dark.svg" class="h-7 w-auto hidden dark:block" alt="Mustafa Khalied logo" />
+                <span class="text-sm ink-soft">&copy; <span id="yr"></span> Mustafa Khalied</span>
             </div>
-            <div class="text-gray-600 text-sm">&copy; 2025 Mustafa Khalied. All rights reserved.</div>
+            <div class="flex items-center gap-6">
+                <a href="https://github.com/mustafa-kh-98" target="_blank" rel="noopener"
+                    class="ink-soft hover:text-[var(--ink)] transition" aria-label="GitHub"><i
+                        class="fa-brands fa-github text-lg"></i></a>
+                <a href="https://www.linkedin.com/in/mustafa-khalied-951935155" target="_blank" rel="noopener"
+                    class="ink-soft hover:text-[var(--ink)] transition" aria-label="LinkedIn"><i
+                        class="fa-brands fa-linkedin-in text-lg"></i></a>
+                <a href="mailto:mustafa.khalied.98@gmail.com"
+                    class="ink-soft hover:text-[var(--ink)] transition" aria-label="Email"><i
+                        class="fa-solid fa-envelope text-lg"></i></a>
+                <a href="mustafa-cv-mobile-dev.pdf" target="_blank" rel="noopener"
+                    class="text-sm font-600 hover:text-[var(--g1)] transition">Download CV</a>
+            </div>
         </div>
     </footer>
 
-    <div id="projectModal" class="modal-overlay hidden fixed inset-0 z-50 flex items-center justify-center p-4">
-        <div class="bg-secondary border border-gray-700 w-full max-w-2xl rounded-2xl shadow-2xl relative flex flex-col max-h-[90vh]">
-            <div class="p-6 border-b border-gray-700 flex justify-between items-center">
-                <h3 id="modalTitle" class="text-2xl font-bold text-white">Project Title</h3>
-                <button onclick="closeModal()" class="text-gray-400 hover:text-white text-xl"><i class="fa-solid fa-xmark"></i></button>
+    <!-- Project modal -->
+    <div id="projectModal" class="modal-ov hidden fixed inset-0 z-50 flex items-center justify-center p-5">
+        <div class="modal-card w-full max-w-xl rounded-3xl shadow-2xl flex flex-col max-h-[88vh]">
+            <div class="p-6 flex justify-between items-center border-b hairline">
+                <h3 id="mTitle" class="text-2xl font-display font-600 tracking-tight"></h3>
+                <button onclick="closeModal()" aria-label="Close"
+                    class="w-9 h-9 rounded-full grid place-items-center ink-soft hover:text-[var(--ink)] transition">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
             </div>
             <div class="p-6 overflow-y-auto">
-                <p id="modalDesc" class="text-gray-300 leading-relaxed mb-6">Description goes here...</p>
-                <div id="modalTags" class="flex flex-wrap gap-2 mb-6">
-                    </div>
-                
-                <div id="modalButtons" class="flex flex-col sm:flex-row gap-3">
-                    </div>
+                <p id="mDesc" class="ink-soft leading-relaxed mb-6"></p>
+                <div id="mTags" class="flex flex-wrap gap-2 mb-7"></div>
+                <div id="mBtns" class="flex flex-col sm:flex-row gap-3"></div>
             </div>
         </div>
     </div>
 
     <script>
-        // Data derived from the CV with Updated Links
-        const projectsData = [
-            {
-                id: 0,
-                title: "Being Muslim",
-                icon: "fa-mosque",
-                color: "from-emerald-600 to-teal-900",
-                shortDesc: "Social media app for Muslims. Share thoughts, prayers & events.",
-                fullDesc: "Led the implementation of a cross-platform mobile application utilizing Flutter, Bloc for state management, and both REST API and GraphQL integration. Developed a social media app for Muslims to share thoughts, prayers, articles, and events in a safe environment. Enabled users to request prayers, organize/follow events, and ask Islamic questions with answers from scholars.",
-                tags: ["Flutter", "Bloc", "GraphQL", "REST API"],
-                links: [
-                    { label: "Google Play", url: "https://play.google.com/store/apps/details?id=com.misraj.being.muslim", icon: "fa-google-play" }
-                ]
-            },
-            {
-                id: 1,
-                title: "Fatiha",
-                icon: "fa-book-quran",
-                color: "from-indigo-600 to-purple-900",
-                shortDesc: "Learning Surah Al-Fatiha with AI-powered Telawa correction.",
-                fullDesc: "Led the implementation of a cross-platform mobile application utilizing Flutter, GetX for state management, and REST API. Developed a mobile app for learning Surah Al-Fatiha with recitations, Tajweed lessons, interpretations, and memorization tools. Integrated AI-powered Telawa correction for personalized feedback.",
-                tags: ["Flutter", "GetX", "AI Integration", "Education"],
-                links: [
-                    { label: "Google Play", url: "https://play.google.com/store/apps/details?id=com.misraj.fatihah", icon: "fa-google-play" },
-                    { label: "App Store", url: "https://apps.apple.com/ae/app/alfatiha-al-haramain/id6479575337", icon: "fa-app-store-ios" }
-                ]
-            },
-            {
-                id: 2,
-                title: "Quran-ORB",
-                icon: "fa-tv",
-                color: "from-blue-600 to-indigo-900",
-                shortDesc: "Cross-platform Mobile & Smart TV app for Quran listening.",
-                fullDesc: "Led the implementation of a cross-platform mobile and Smart TV application utilizing Flutter, GetX for state management, and REST API. Developed a Quran-focused app providing customizable listening experiences with multiple recitations and personalized recommendations. Implemented Firebase for notifications, Just Audio & Audio Service for seamless playback, and Dio for networking.",
-                tags: ["Flutter", "Smart TV", "Audio Service", "GetX"],
-                links: [
-                    { label: "Google Play", url: "https://play.google.com/store/apps/details?id=com.misraj.quran.orb", icon: "fa-google-play" },
-                    { label: "App Store", url: "https://apps.apple.com/ae/app/quran-orb/id6480454074", icon: "fa-app-store-ios" }
-                ]
-            },
-            {
-                id: 4,
-                title: "Sadeem (Admin & Student)",
-                icon: "fa-school",
-                color: "from-cyan-600 to-blue-900",
-                shortDesc: "Educational platform connecting students, teachers, and drivers.",
-                fullDesc: "Led the development of an educational platform using Flutter, GetX, and REST API to connect students, teachers, and bus drivers through dedicated apps. Implemented real-time messaging using Sockets and online meetings with Zoom SDK.",
-                tags: ["Zoom SDK", "Sockets", "Education", "GetX"],
-                links: [
-                    { label: "Sadeem App", url: "https://play.google.com/store/apps/details?id=com.sadeem.lightv1", icon: "fa-google-play" },
-                    { label: "Sadeem Teacher", url: "https://play.google.com/store/apps/details?id=com.sadeem.lightv2.teacher", icon: "fa-google-play" }
-                ]
-            },
-            {
-                id: 3,
-                title: "Engz (User & Driver)",
-                icon: "fa-taxi",
-                color: "from-orange-600 to-red-900",
-                shortDesc: "Uber-like app for taxi booking and food delivery services.",
-                fullDesc: "Led the development of an Uber-like mobile application using Flutter, GetX, and REST API for taxi booking and food delivery services. Implemented real-time communication using WebRTC for voice calls and chat (text, images, voice notes, location). Integrated APIs, Sockets, and Google Maps for navigation and data handling.",
-                tags: ["WebRTC", "Google Maps", "Sockets", "GetX"],
-                links: [] 
-            },
-            {
-                id: 5,
-                title: "MyBill",
-                icon: "fa-receipt",
-                color: "from-green-500 to-emerald-800",
-                shortDesc: "Cashback app to earn points from receipts and redeem them.",
-                fullDesc: "Led the implementation of a cross-platform mobile application utilizing Flutter, GetX for state management, Firebase, and REST API integration. Developed a cashback app allowing users to earn points from receipts and redeem them for cash or gift cards. Features QR code scanning, Google Maps, Dio, and MVC architecture.",
-                tags: ["QR Code", "Cashback", "Firebase", "Google Maps"],
-                links: []
-            },
-            {
-                id: 6,
-                title: "Gumla",
-                icon: "fa-boxes-stacked",
-                color: "from-yellow-600 to-orange-800",
-                shortDesc: "Wholesale trading app connecting merchants and small businesses.",
-                fullDesc: "Led the development of a wholesale trading mobile application using Flutter, Provider for state management, and REST API integration. Developed a wholesale trading app facilitating bulk purchases between merchants and small businesses. Implemented Firebase for real-time updates and notifications.",
-                tags: ["Provider", "B2B", "E-commerce", "REST API"],
-                links: []
-            },
-            {
-                id: 7,
-                title: "E-learning",
-                icon: "fa-chalkboard-user",
-                color: "from-pink-600 to-rose-900",
-                shortDesc: "Educational app UI catering to all age groups.",
-                fullDesc: "Led the development of an educational mobile application using Flutter and GetX, focusing on an intuitive and versatile UI. Developed an educational app UI catering to all age groups and educational levels. Designed live streaming interfaces for classes and lectures.",
-                tags: ["UI/UX", "Live Streaming", "GetX", "Flutter"],
-                links: []
-            }
+        const skillsData = [
+            { icon: "fa-mobile-screen", title: "Mobile Ecosystem", items: ["Flutter", "Dart", "Android Native", "Kotlin", "Jetpack Compose"], big: true },
+            { icon: "fa-sitemap", title: "State & Architecture", items: ["GetX", "Bloc / Cubit", "Riverpod", "Clean Arch", "MVVM / MVI"] },
+            { icon: "fa-cloud", title: "Backend & Networking", items: ["Firebase", "REST", "GraphQL", "Dio / Retrofit"] },
+            { icon: "fa-bolt", title: "Real-time", items: ["WebRTC", "Socket.IO", "WebSockets", "FCM"], big: true },
+            { icon: "fa-screwdriver-wrench", title: "Tools & DevOps", items: ["Git", "Figma", "Play Console", "App Store Connect"] },
+            { icon: "fa-puzzle-piece", title: "Integrations", items: ["Google Maps", "Zoom SDK", "Just Audio", "Audio Service"] }
         ];
 
-        // Function to render cards
-        function renderProjects() {
-            const container = document.getElementById('projects-container');
-            container.innerHTML = projectsData.map(project => `
-                <div onclick="openModal(${project.id})" class="glass-card rounded-xl overflow-hidden group hover:-translate-y-2 cursor-pointer h-full flex flex-col">
-                    <div class="h-40 bg-gradient-to-br ${project.color} flex items-center justify-center relative">
-                        <i class="fa-solid ${project.icon} text-5xl text-white/50 group-hover:text-white transition"></i>
-                        <span class="absolute bottom-2 right-2 text-xs text-white/70 bg-black/20 px-2 py-1 rounded"><i class="fa-solid fa-hand-pointer"></i> Click for details</span>
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col justify-between">
-                        <div>
-                            <h3 class="text-lg font-bold text-white mb-2">${project.title}</h3>
-                            <p class="text-gray-400 text-sm mb-4 line-clamp-2">${project.shortDesc}</p>
-                        </div>
-                        <div class="flex flex-wrap gap-2 text-xs">
-                            ${project.tags.slice(0, 3).map(tag => `<span class="text-accent">#${tag}</span>`).join('')}
-                        </div>
-                    </div>
+        const servicesData = [
+            { n: "01", title: "Cross-platform app development", desc: "One Flutter codebase, native performance and feel on both iOS and Android." },
+            { n: "02", title: "UI / UX engineering", desc: "Pixel-accurate, fluid interfaces translated faithfully from Figma to production." },
+            { n: "03", title: "Real-time & complex features", desc: "Chat, voice/video calls, live data and maps with WebRTC and Sockets." },
+            { n: "04", title: "Optimization, release & support", desc: "Performance tuning, store submission and reliable post-launch maintenance." }
+        ];
+
+        const projectsData = [
+            { id: 0, title: "Being Muslim", icon: "fa-mosque", color: "from-emerald-500 to-teal-700", shortDesc: "A social platform for Muslims to share thoughts, prayers, articles and events in a safe space.", fullDesc: "Led a cross-platform build with Flutter, Bloc for state management, and both REST API and GraphQL. A social media app for Muslims to share thoughts, prayers, articles and events safely. Users can request prayers, organize/follow events, and ask Islamic questions answered by scholars.", tags: ["Flutter", "Bloc", "GraphQL", "REST API"], links: [{ label: "Google Play", url: "https://play.google.com/store/apps/details?id=com.misraj.being.muslim", icon: "fa-google-play" }] },
+            { id: 1, title: "Fatiha", icon: "fa-book-quran", color: "from-violet-500 to-purple-700", shortDesc: "Learn Surah Al-Fatiha with recitations, Tajweed and AI-powered Telawa correction.", fullDesc: "Led a cross-platform build with Flutter, GetX and REST API. An app for learning Surah Al-Fatiha with recitations, Tajweed lessons, interpretations and memorization tools, plus AI-powered Telawa correction for personalized feedback.", tags: ["Flutter", "GetX", "AI Integration", "Education"], links: [{ label: "Google Play", url: "https://play.google.com/store/apps/details?id=com.misraj.fatihah", icon: "fa-google-play" }, { label: "App Store", url: "https://apps.apple.com/ae/app/alfatiha-al-haramain/id6479575337", icon: "fa-app-store-ios" }] },
+            { id: 2, title: "Quran-ORB", icon: "fa-tv", color: "from-sky-500 to-indigo-700", shortDesc: "Cross-platform mobile & Smart TV app for a customizable Quran listening experience.", fullDesc: "Led a cross-platform mobile and Smart TV build with Flutter, GetX and REST API. Customizable listening with multiple recitations and personalized recommendations. Firebase notifications, Just Audio & Audio Service for seamless playback, Dio for networking.", tags: ["Flutter", "Smart TV", "Audio Service", "GetX"], links: [{ label: "Google Play", url: "https://play.google.com/store/apps/details?id=com.misraj.quran.orb", icon: "fa-google-play" }, { label: "App Store", url: "https://apps.apple.com/ae/app/quran-orb/id6480454074", icon: "fa-app-store-ios" }] },
+            { id: 4, title: "Sadeem", icon: "fa-school", color: "from-cyan-500 to-blue-700", shortDesc: "An education platform connecting students, teachers and bus drivers via dedicated apps.", fullDesc: "Led the development of an education platform with Flutter, GetX and REST API connecting students, teachers and bus drivers through dedicated apps. Real-time messaging via Sockets and online meetings with Zoom SDK.", tags: ["Zoom SDK", "Sockets", "Education", "GetX"], links: [{ label: "Sadeem App", url: "https://play.google.com/store/apps/details?id=com.sadeem.lightv1", icon: "fa-google-play" }, { label: "Sadeem Teacher", url: "https://play.google.com/store/apps/details?id=com.sadeem.lightv2.teacher", icon: "fa-google-play" }] },
+            { id: 3, title: "Engz", icon: "fa-taxi", color: "from-orange-500 to-red-700", shortDesc: "An Uber-like app for taxi booking and food delivery with real-time calls and chat.", fullDesc: "Led an Uber-like build with Flutter, GetX and REST API for taxi booking and food delivery. Real-time communication via WebRTC for voice calls and chat (text, images, voice notes, location). Sockets and Google Maps for navigation.", tags: ["WebRTC", "Google Maps", "Sockets", "GetX"], links: [] },
+            { id: 5, title: "MyBill", icon: "fa-receipt", color: "from-green-500 to-emerald-700", shortDesc: "A cashback app to earn points from receipts and redeem them for cash or gift cards.", fullDesc: "Led a cross-platform build with Flutter, GetX, Firebase and REST API. Users earn points from receipts and redeem them for cash or gift cards. QR scanning, Google Maps, Dio and MVC architecture.", tags: ["QR Code", "Firebase", "Google Maps", "GetX"], links: [] },
+            { id: 6, title: "Gumla", icon: "fa-boxes-stacked", color: "from-amber-500 to-orange-700", shortDesc: "A wholesale trading app facilitating bulk purchases between merchants and businesses.", fullDesc: "Led a wholesale trading build with Flutter, Provider and REST API facilitating bulk purchases between merchants and small businesses. Firebase for real-time updates and notifications.", tags: ["Provider", "B2B", "E-commerce", "REST API"], links: [] },
+            { id: 7, title: "E-learning", icon: "fa-chalkboard-user", color: "from-pink-500 to-rose-700", shortDesc: "An education app UI for all age groups, with live streaming for classes and lectures.", fullDesc: "Led an education app build with Flutter and GetX, focused on an intuitive, versatile UI for all age groups and levels, including live streaming interfaces for classes and lectures.", tags: ["UI/UX", "Live Streaming", "GetX", "Flutter"], links: [] }
+        ];
+
+        const skg = document.getElementById('skills-grid');
+        skg.innerHTML = skillsData.map((s, i) => `
+            <div class="reveal tile p-7 ${s.big ? 'sm:col-span-2' : ''}" style="transition-delay:${(i % 4) * .07}s">
+                <span class="tile-glow"></span>
+                <div class="flex items-center gap-3 mb-5">
+                    <span class="w-11 h-11 rounded-2xl grid place-items-center text-lg"
+                          style="background:color-mix(in srgb,var(--g1) 14%,transparent);color:var(--g1)">
+                        <i class="fa-solid ${s.icon}"></i>
+                    </span>
+                    <h3 class="font-display font-600 text-lg">${s.title}</h3>
                 </div>
-            `).join('');
-        }
+                <div class="flex flex-wrap gap-2">
+                    ${s.items.map(t => `<span class="chip">${t}</span>`).join('')}
+                </div>
+            </div>`).join('');
 
-        // Modal Functions
+        document.getElementById('svc-list').innerHTML = servicesData.map((s, i) => `
+            <div class="svc reveal py-9 flex items-start gap-6 sm:gap-10" style="transition-delay:${(i % 4) * .06}s">
+                <span class="font-display font-700 text-2xl sm:text-3xl grad-text shrink-0 w-12">${s.n}</span>
+                <div class="flex-grow relative z-10">
+                    <h3 class="font-display font-600 text-xl sm:text-3xl tracking-tight">${s.title}</h3>
+                    <p class="ink-soft mt-3 max-w-2xl leading-relaxed">${s.desc}</p>
+                </div>
+                <span class="arrow text-xl sm:text-2xl mt-1 grad-text relative z-10">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </span>
+            </div>`).join('') + '<div class="svc"></div>';
+
+        document.getElementById('work-list').innerHTML = projectsData.map((p, i) => {
+            const flip = i % 2 === 1;
+            return `
+            <article class="show-row reveal grid lg:grid-cols-12 gap-8 lg:gap-12 items-center"
+                onclick="openModal(${p.id})" tabindex="0" role="button"
+                onkeydown="if(event.key==='Enter')openModal(${p.id})">
+                <div class="show-visual lg:col-span-7 ${flip ? 'lg:order-2' : ''}
+                            aspect-[16/10] bg-gradient-to-br ${p.color} grid place-items-center">
+                    <i class="fa-solid ${p.icon} text-7xl sm:text-8xl text-white/35"></i>
+                </div>
+                <div class="lg:col-span-5 ${flip ? 'lg:order-1' : ''}">
+                    <span class="text-sm font-600 ink-soft">0${i + 1}</span>
+                    <h3 class="font-display font-600 text-3xl sm:text-4xl tracking-[-0.02em] mt-2 mb-4">${p.title}</h3>
+                    <p class="ink-soft text-lg leading-relaxed mb-6">${p.shortDesc}</p>
+                    <div class="flex flex-wrap gap-2 mb-7">
+                        ${p.tags.slice(0, 4).map(t => `<span class="chip">${t}</span>`).join('')}
+                    </div>
+                    <span class="inline-flex items-center gap-2 font-600 grad-text">
+                        View case <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </span>
+                </div>
+            </article>`;
+        }).join('');
+
         function openModal(id) {
-            const project = projectsData.find(p => p.id === id);
-            if (!project) return;
-
-            document.getElementById('modalTitle').innerText = project.title;
-            document.getElementById('modalDesc').innerText = project.fullDesc;
-            
-            // Render Tags
-            const tagsContainer = document.getElementById('modalTags');
-            tagsContainer.innerHTML = project.tags.map(tag => 
-                `<span class="bg-gray-700 text-gray-200 px-3 py-1 rounded-full text-xs border border-gray-600">${tag}</span>`
-            ).join('');
-
-            // Render Links dynamically
-            const buttonsContainer = document.getElementById('modalButtons');
-            buttonsContainer.innerHTML = ''; // Clear previous buttons
-
-            if (project.links && project.links.length > 0) {
-                project.links.forEach(link => {
-                    const btn = document.createElement('a');
-                    btn.href = link.url;
-                    btn.target = "_blank";
-                    btn.className = "inline-flex items-center justify-center gap-2 bg-accent text-primary px-6 py-3 rounded-lg font-bold hover:bg-white transition";
-                    btn.innerHTML = `<i class="fa-brands ${link.icon}"></i> ${link.label}`;
-                    buttonsContainer.appendChild(btn);
+            const p = projectsData.find(x => x.id === id);
+            if (!p) return;
+            mTitle.innerText = p.title;
+            mDesc.innerText = p.fullDesc;
+            mTags.innerHTML = p.tags.map(t => `<span class="chip">${t}</span>`).join('');
+            mBtns.innerHTML = '';
+            if (p.links && p.links.length) {
+                p.links.forEach(l => {
+                    const a = document.createElement('a');
+                    a.href = l.url; a.target = "_blank"; a.rel = "noopener";
+                    a.className = "btn btn-grad";
+                    a.innerHTML = `<i class="fa-brands ${l.icon}"></i> ${l.label}`;
+                    mBtns.appendChild(a);
                 });
             } else {
-                const span = document.createElement('span');
-                span.className = "text-gray-500 italic text-sm";
-                span.innerText = "Internal/Private Project";
-                buttonsContainer.appendChild(span);
+                const s = document.createElement('span');
+                s.className = "ink-soft italic text-sm";
+                s.innerText = "Internal / private project";
+                mBtns.appendChild(s);
             }
-
-            // Show Modal
-            document.getElementById('projectModal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            projectModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
         }
-
         function closeModal() {
-            document.getElementById('projectModal').classList.add('hidden');
-            document.body.style.overflow = 'auto'; // Restore scrolling
+            projectModal.classList.add('hidden');
+            document.body.style.overflow = '';
         }
+        projectModal.addEventListener('click', e => { if (e.target === projectModal) closeModal(); });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-        // Close modal when clicking outside
-        document.getElementById('projectModal').addEventListener('click', function(e) {
-            if (e.target === this) closeModal();
+        document.getElementById('theme').addEventListener('click', () => {
+            const isDark = document.documentElement.classList.toggle('dark');
+            try { localStorage.setItem('theme', isDark ? 'dark' : 'light'); } catch (e) { }
         });
 
-        // Initialize
-        renderProjects();
+        const nav = document.getElementById('nav');
+        const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 16);
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+
+        const burger = document.getElementById('burger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        burger.addEventListener('click', () => {
+            const open = mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex', !open);
+        });
+        document.querySelectorAll('.mobile-link').forEach(l =>
+            l.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+            }));
+
+        const io = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+            });
+        }, { threshold: .12, rootMargin: "0px 0px -50px 0px" });
+        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            const hero = document.querySelector('#home .relative.z-10');
+            let tick = false;
+            window.addEventListener('scroll', () => {
+                if (tick) return; tick = true;
+                requestAnimationFrame(() => {
+                    const y = window.scrollY;
+                    if (y < window.innerHeight) {
+                        hero.style.transform = `translate3d(0,${y * .12}px,0)`;
+                        hero.style.opacity = Math.max(0, 1 - y / (innerHeight * .8));
+                    }
+                    tick = false;
+                });
+            }, { passive: true });
+        }
+
+        document.getElementById('yr').textContent = new Date().getFullYear();
+        window.addEventListener('load', () =>
+            setTimeout(() => document.getElementById('loader').classList.add('done'), 250));
     </script>
 </body>
+
 </html>
